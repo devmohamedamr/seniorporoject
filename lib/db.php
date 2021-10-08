@@ -38,8 +38,9 @@ class db{
     }
 
     public function excu(){
-        // echo $this->query;die;
+        // echo $this->query;
         $this->query_res =  mysqli_query($this->connection,$this->query);
+        return $this->query_res;
     }
     // get data
     public function GetRow(){

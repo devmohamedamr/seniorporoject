@@ -8,9 +8,9 @@ require "../../start.php";
 require "../../lib/db.php";
 
 if(isset($_POST['title'])){
-    $title = $_POST['title'];
-    $shortdesc = $_POST['shortdesc'];
-    $desc = $_POST['desc'];
+    $title = addslashes($_POST['title']);
+    $shortdesc = addslashes($_POST['shortdesc']);
+    $desc = addslashes($_POST['desc']);
     $user_id = $_SESSION['user']['id'];
     $tmp = $_FILES['img']['tmp_name'];
     $imgname = $_FILES['img']['name'];

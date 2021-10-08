@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Blank Page</title>
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -153,8 +153,16 @@
           </div>
         </div>
         <div class="card-body">
-          Start creating your amazing application!
-        </div>
+          <h2>theam Setting</h2>
+          <hr>
+          <img width="200px" id="site" height="200px" onclick="changetheam('site')" src="../../design/img/theam/1.png">
+          <img width="200px" id="site2" height="200px" onclick="changetheam('site2')" src="../../design/img/theam/2.png">
+
+
+
+
+
+          </div>
         <!-- /.card-body -->
         <div class="card-footer">
           Footer
@@ -189,5 +197,47 @@
 <script src="../../design/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../design/dashboard/dist/js/adminlte.min.js"></script>
+
+<script>
+  function changetheam(theamid){
+    $.ajax({
+      url:"changetheam.php",
+      type:"POST",
+      data:{id:theamid},
+      success: function (response) {
+        // alert("www");
+        alertt();
+        
+        $("#"+theamid).css({"border":"1px solid red"});
+       
+// You will get response from your PHP page (what you echo or print)
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+           console.log(textStatus, errorThrown);
+        }
+    });
+  }
+
+
+  function alertt() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    Toast.fire({
+        icon: 'success',
+        title: 'theam updated successfully'
+    })
+}
+
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

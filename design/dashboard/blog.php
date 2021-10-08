@@ -162,6 +162,9 @@
                       <th>short description</th>
                       <th>description</th>
                       <th>img</th>
+                      <th>update</th>
+                      <th>delete</th>
+
                     </tr>
                   </thead>
                   <tbody>
@@ -172,6 +175,8 @@
                       <td><?= $blog['short_description']; ?></td>
                       <td><?= $blog['artical']; ?></td>
                       <td><img src="../../design/img/<?= $blog['img']; ?>" width="100px" height="100px" alt=""></td>
+                      <td><a href="updateblog.php?id=<?= $blog['id']; ?>">update</a></td>
+                      <td><a href="deleteblog.php?id=<?= $blog['id']; ?>">delete</a></td>
                     </tr>
                       <?php endforeach; ?>
                   </tbody>

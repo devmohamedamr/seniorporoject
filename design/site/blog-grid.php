@@ -194,7 +194,7 @@
             <?php foreach($blogs as $blog): ?>
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card card-hover-shadow">
-                <a href="blog-single.html"><img class="card-img-top" src="design/img/<?= $blog['img']; ?>" alt="Card image cap"></a>
+                <a href="blogdetails.php?id=<?= $blog['id']; ?>"><img class="card-img-top" src="design/img/<?= $blog['img']; ?>" alt="Card image cap"></a>
                 <div class="card-block">
                   <h4 class="card-title"><?= $blog['title']; ?></h4>
                   <p class="card-text"><?= $blog['short_description']; ?></p>
